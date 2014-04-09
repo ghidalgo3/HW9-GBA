@@ -40,3 +40,10 @@ void wait(int waitTime) {
     for(i = 0; i < waitTime; i++);
 }
 
+void fillScreen(volatile unsigned short color)
+{
+	DMA[3].src = &color;
+	DMA[3].dst = videoBuffer;
+	DMA[3].cnt = (160*240) | DMA_SOURCE_FIXED | DMA_ON;
+}
+

@@ -86,6 +86,7 @@ int main() {
     REG_DISPCTL = MODE3 | BG2_ENABLE;
     //char message[STR_LENGTH];
     initObjects();
+    fillScreen(RGB(20,10,21));
     while(1) {
         waitForVblank();
         drawCursor();
